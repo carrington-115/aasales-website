@@ -3,9 +3,12 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { HiOutlineTranslate } from "react-icons/hi";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+
 const Header = () => {
-  const [scrollState, setScrollState] = useState(true);
+  const [scrollState, setScrollState] = useState(false);
+  const [menuState, setMenuState] = useState(false);
+
   function scrollCheck() {
     const scrollPosition = window.scrollY;
     if (scrollPosition >= 200) {
@@ -16,10 +19,23 @@ const Header = () => {
   }
   window.addEventListener("scroll", scrollCheck);
 
-  useEffect(() => {});
+  function handleMenuClicked() {
+    setMenuState(!menuState);
+  }
+
+  useEffect(() => {
+    if (scrollState === true) {
+      setScrollState(true);
+    } else {
+      setScrollState(false);
+    }
+    if (menuState === true && scrollState === false) {
+      setScrollState(true);
+    }
+  }, [scrollState, menuState]);
 
   return (
-    <HeaderContainer show={scrollState}>
+    <HeaderContainer show={scrollState} showMenu={menuState}>
       <div className="inner-header" show={scrollState}>
         <Link className="logo" to="/">
           {scrollState ? (
@@ -66,10 +82,21 @@ const Header = () => {
               style={{ width: "30px", height: "30px" }}
             />
           </div>
-          <div className="ham-menu-icon">
-            <AiOutlineMenu color={scrollState ? "#18004a" : "white"} />
+          <div className="ham-menu-icon" onClick={handleMenuClicked}>
+            {menuState ? (
+              <AiOutlineClose color={scrollState ? "#18004a" : "white"} />
+            ) : (
+              <AiOutlineMenu color={scrollState ? "#18004a" : "white"} />
+            )}
           </div>
         </div>
+      </div>
+      <div showMenu={menuState} className="mobile-hamburger">
+        <Link t="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/contact">Contact</Link>
       </div>
     </HeaderContainer>
   );
@@ -84,17 +111,28 @@ const HeaderContainer = styled.header`
   width: 100%;
   justify-content: center;
   align-items: center;
+  .mobile-hamburger {
+    @media (min-width: 600px) {
+      display: none;
+    }
+  }
   .inner-header {
     width: 80%;
     display: flex;
     align-items: center;
+    z-index: 10;
     gap: 100px;
     margin: ${(props) => (props.show ? "50px 0px" : "65px 0px")};
     background-color: ${(props) => (props.show ? "white" : "none")};
     padding: ${(props) => (props.show ? "10px 50px" : "0")};
     border-radius: ${(props) => (props.show ? "50px" : "0")};
     box-shadow: ${(props) =>
-      props.show ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" : "none"};
+      props.show ? "0px -4px 4px 0px rgba(0, 0, 0, 0.25)" : "none"};
+    .mobile-menu {
+      @media (min-width: 600px) {
+        display: none;
+      }
+    }
     .desktop-navigation {
       @media (min-width: 320px) and (max-width: 599px) {
         display: none;
@@ -121,11 +159,7 @@ const HeaderContainer = styled.header`
         flex-direction: row;
         margin-left: 20px;
       }
-      .mobile-menu {
-        @media (min-width: 600px) {
-          display: none;
-        }
-      }
+
       .logo {
         width: 120px;
         height: 70.766px;
@@ -149,6 +183,7 @@ const HeaderContainer = styled.header`
         justify-content: space-around;
         width: 50%;
         .translate-icon {
+          position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -181,6 +216,34 @@ const HeaderContainer = styled.header`
         img {
           width: 100%;
           height: 100%;
+        }
+      }
+    }
+    .mobile-hamburger {
+      position: fixed;
+      top: 90px;
+      width: 88%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      padding-top: 1.35cm;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      height: 60vh;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      gap: 50px;
+      transform: ${(props) => (props.showMenu ? "scaleY(100%)" : "scaleY(0%)")};
+      transition: all 0.1s 250ms cubic-bezier(1, 0.3, 0.96, 0.7);
+      a {
+        color: #18004a;
+        font-family: Roboto;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26.998px;
+        &:hover {
+          color: #14dc78;
         }
       }
     }

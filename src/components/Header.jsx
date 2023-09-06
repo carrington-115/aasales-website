@@ -105,7 +105,8 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-  position: ${(props) => (props.show ? "fixed" : "relative")};
+  position: fixed;
+  z-index: 20;
   top: 0;
   display: flex;
   width: 100%;

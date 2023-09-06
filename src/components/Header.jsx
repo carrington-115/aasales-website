@@ -105,11 +105,12 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+  overflow-x: hidden;
   position: fixed;
   z-index: 20;
   top: 0;
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   .mobile-hamburger {
@@ -175,6 +176,7 @@ const HeaderContainer = styled.header`
   }
   @media (min-width: 320px) and (max-width: 599px) {
     .inner-header {
+      overflow-x: hidden;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
@@ -222,8 +224,9 @@ const HeaderContainer = styled.header`
     }
     .mobile-hamburger {
       position: fixed;
+      overflow-x: hidden;
       top: 90px;
-      width: 88%;
+      width: 90vw;
       display: flex;
       flex-direction: column;
       align-items: center;

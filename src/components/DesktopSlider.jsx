@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
+  speed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplaySpeed: 500,
@@ -66,7 +66,7 @@ function DesktopSlider() {
           <div className="backdrop" />
           <div className="slider-text">
             <p>We Do</p>
-            <h2>
+            <h2 style={{ marginBottom: "20px" }}>
               Imports and
               <br />
               Exports

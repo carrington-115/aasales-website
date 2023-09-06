@@ -7,10 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 const settings = {
   dots: false,
   infinite: true,
-  speed: 2000,
+  speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplaySpeed: 500,
+  autoplaySpeed: 6000,
   autoplay: true,
   arrows: true,
   fade: true,

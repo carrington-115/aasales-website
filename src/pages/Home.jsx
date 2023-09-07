@@ -4,6 +4,7 @@ import DesktopSlider from "../components/DesktopSlider";
 import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
 import NumberCounter from "number-counter";
+import PopularItem from "../components/PopularItem";
 
 const popularServices = [
   {
@@ -35,25 +36,25 @@ const popularProducts = [
   {
     imageLocation: "/images/pages/home/products/product1.png",
     title: "Leather",
-    productContent:
+    serviceContent:
       "Our carefully sourced and expertly crafted leather products include exquisite pieces that cater to various industries and preferences. From fashion and accessories to upholstery and beyond, our leather products are synonymous with durability, style, and exceptional craftsmanship.",
   },
   {
     imageLocation: "/images/pages/home/products/product2.png",
     title: "Textiles",
-    productContent:
+    serviceContent:
       "Our extensive range of textiles encompasses an array of materials, patterns, and textures suitable for various applications. Whether you're in the fashion industry, interior design, or manufacturing, our textiles are crafted with precision and attention to detail, allowing you to bring your creative visions to life.",
   },
   {
     imageLocation: "/images/pages/home/products/product3.png",
     title: "Food Items",
-    productContent:
+    serviceContent:
       "we are passionate about sharing the rich tapestry of flavors from around the world. As a leading food distribution and exporting service, we specialize in the global sourcing, distribution, and export of premium food products, including grains, spices, and rice.",
   },
   {
     imageLocation: "/images/pages/home/products/product4.png",
     title: "Electronics",
-    productContent:
+    serviceContent:
       "Discover the limitless possibilities of the digital world with AA SALES. We're your trusted partner in sourcing and delivering high-quality electronics products that empower innovation and enhance connectivity.",
   },
 ];
@@ -206,133 +207,13 @@ function Home() {
           </section>
         </section>
       </div>
-      <PopularContainer>
-        <div className="title-separator">
-          <h1>Our Popular Services</h1>
-        </div>
-        <div className="content">
-          {popularServices.map((item) => (
-            <div className="item">
-              <img src={item.imageLocation} alt="" />
-              <h2>{item.title}</h2>
-              <p>{item.serviceContent}</p>
-              <button>Learn more</button>
-            </div>
-          ))}
-        </div>
-      </PopularContainer>
-      <PopularContainer>
-        <div className="title-separator">
-          <h1>Our Popular Products</h1>
-        </div>
-        <div className="content">
-          {popularProducts.map((item) => (
-            <div className="item">
-              <img src={item.imageLocation} alt="" />
-              <h2>{item.title}</h2>
-              <p>{item.productContent}</p>
-              <button>Learn more</button>
-            </div>
-          ))}
-        </div>
-      </PopularContainer>
+      <PopularItem title="Our Popular Services" context={popularServices} />
+      <PopularItem title="Our Popular Products" context={popularProducts} />
     </Container>
   );
 }
 
 export default Home;
-
-const PopularContainer = styled.section`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 1cm 0;
-  .content {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 21px;
-    justify-content: center;
-    align-items: start;
-    @media (min-width: 320px) and (max-width: 599px) {
-      width: 80vw;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .item {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      font-family: Roboto;
-      gap: 15px;
-      padding: 20px;
-      border-radius: 20px;
-      @media (min-width: 320px) and (max-width: 599px) {
-        padding: 10px 5px;
-        border-radius: 5px;
-        gap: 5px;
-      }
-      cursor: pointer;
-      &:hover {
-        background-color: white;
-        box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);
-      }
-      img {
-        width: 220px;
-        height: auto;
-        border-radius: 20px;
-        @media (min-width: 320px) and (max-width: 599px) {
-          width: 100%;
-        }
-      }
-      h2 {
-        color: #000;
-        font-family: Roboto;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 26px;
-        @media (min-width: 320px) and (max-width: 599px) {
-          font-size: 17px;
-        }
-      }
-      p {
-        color: #000;
-        font-family: Roboto;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 26px;
-        @media (min-width: 320px) and (max-width: 599px) {
-          font-size: 11px;
-          line-height: 15px;
-        }
-      }
-      button {
-        display: flex;
-        padding: 10px 20px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        color: white;
-        background-color: #18004a;
-        border: 1px solid transparent;
-        border-radius: 0;
-        @media (min-width: 320px) and (max-width: 599px) {
-          font-size: 11px;
-        }
-        &:hover {
-          border-color: #18004a;
-          color: #18004a;
-          background-color: transparent;
-        }
-      }
-    }
-  }
-`;
 
 const Container = styled.div`
   display: flex;

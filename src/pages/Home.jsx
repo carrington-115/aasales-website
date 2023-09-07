@@ -120,7 +120,7 @@ function Home() {
           </h2>
           <button>
             <MdOutlineCall />
-            Contact
+            Contact us
           </button>
         </div>
       </div>

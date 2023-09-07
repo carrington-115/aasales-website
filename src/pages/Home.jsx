@@ -256,7 +256,10 @@ const PopularContainer = styled.section`
     justify-content: center;
     align-items: start;
     @media (min-width: 320px) and (max-width: 599px) {
+      width: 80vw;
       grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      border: 1px solid black;
     }
 
     .item {
@@ -268,6 +271,11 @@ const PopularContainer = styled.section`
       gap: 15px;
       padding: 20px;
       border-radius: 20px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        padding: 10px 5px;
+        border-radius: 5px;
+        gap: 5px;
+      }
       cursor: pointer;
       &:hover {
         background-color: white;
@@ -278,7 +286,7 @@ const PopularContainer = styled.section`
         height: auto;
         border-radius: 20px;
         @media (min-width: 320px) and (max-width: 599px) {
-          width: 180px;
+          width: 100%;
         }
       }
       h2 {

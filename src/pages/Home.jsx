@@ -258,8 +258,7 @@ const PopularContainer = styled.section`
     @media (min-width: 320px) and (max-width: 599px) {
       width: 80vw;
       grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-      border: 1px solid black;
+      gap: 18px;
     }
 
     .item {
@@ -407,8 +406,9 @@ const Container = styled.div`
       font-size: 64px;
       font-style: normal;
       font-weight: bold;
+      text-align: center;
       @media (min-width: 320px) and (max-width: 599px) {
-        font-size: 40px;
+        font-size: 30px;
         margin-top: 0.5cm;
       }
     }

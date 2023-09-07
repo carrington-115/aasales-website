@@ -258,8 +258,7 @@ const PopularContainer = styled.section`
     @media (min-width: 320px) and (max-width: 599px) {
       width: 80vw;
       grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-      border: 1px solid black;
+      gap: 18px;
     }
 
     .item {

@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import DesktopSlider from "../components/DesktopSlider";
 import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
+import NumberCounter from "number-counter";
 
 const popularServices = [
   {
@@ -88,17 +89,23 @@ function Home() {
         <div className="numbers">
           <div className="row-1">
             <section>
-              <h1>5</h1>
+              <h1>
+                <NumberCounter end={5} delay={5} />
+              </h1>
               <p>Continents</p>
             </section>
             <section>
-              <h1>51</h1>
+              <h1>
+                <NumberCounter end={51} delay={5} />
+              </h1>
               <p>Countries</p>
             </section>
           </div>
           <div className="row-2">
             <section>
-              <h1>5000+</h1>
+              <h1>
+                <NumberCounter end={5000} delay={5} />
+              </h1>
               <p style={{ textAlign: "center" }}>
                 Distribution <br /> Centers
               </p>
@@ -248,6 +255,10 @@ const PopularContainer = styled.section`
     grid-gap: 21px;
     justify-content: center;
     align-items: start;
+    @media (min-width: 320px) and (max-width: 599px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .item {
       display: flex;
       flex-direction: column;
@@ -266,6 +277,9 @@ const PopularContainer = styled.section`
         width: 220px;
         height: auto;
         border-radius: 20px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          width: 180px;
+        }
       }
       h2 {
         color: #000;
@@ -274,6 +288,9 @@ const PopularContainer = styled.section`
         font-style: normal;
         font-weight: 700;
         line-height: 26px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 17px;
+        }
       }
       p {
         color: #000;
@@ -282,6 +299,10 @@ const PopularContainer = styled.section`
         font-style: normal;
         font-weight: 400;
         line-height: 26px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 11px;
+          line-height: 15px;
+        }
       }
       button {
         display: flex;
@@ -293,6 +314,9 @@ const PopularContainer = styled.section`
         background-color: #18004a;
         border: 1px solid transparent;
         border-radius: 0;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 11px;
+        }
         &:hover {
           border-color: #18004a;
           color: #18004a;
@@ -313,6 +337,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+
     .values-content {
       width: 80%;
       display: grid;
@@ -320,6 +345,9 @@ const Container = styled.div`
       justify-content: space-between;
       gap: 100px;
       row-gap: 50px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
       section {
         display: flex;
         flex-direction: column;
@@ -331,6 +359,9 @@ const Container = styled.div`
           font-size: 44px;
           font-weight: bold;
           line-height: 40px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            font-size: 20px;
+          }
         }
         p {
           color: #18004a;
@@ -340,10 +371,18 @@ const Container = styled.div`
           font-style: normal;
           font-weight: 500;
           line-height: 28px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            font-size: 12px;
+            line-height: 15px;
+          }
         }
         img {
           width: 100px;
           height: 100px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 70px;
+            height: 70px;
+          }
         }
       }
     }
@@ -360,6 +399,10 @@ const Container = styled.div`
       font-size: 64px;
       font-style: normal;
       font-weight: bold;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 40px;
+        margin-top: 0.5cm;
+      }
     }
   }
 
@@ -369,11 +412,17 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 70px 0px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      padding: 0;
+    }
     .inner-content {
       width: 90%;
       display: flex;
       flex-direction: column;
       gap: 30px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 100%;
+      }
       h1 {
         align-self: flex-start;
         color: #000;
@@ -382,12 +431,19 @@ const Container = styled.div`
         font-style: normal;
         font-weight: bold;
         letter-spacing: -1.28px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          display: none;
+        }
       }
       section {
         width: 100%;
         display: flex;
         justify-content: space-between;
         border-radius: 21.346px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          flex-direction: column;
+          border-radius: 0;
+        }
         background: var(
           --gradient-1,
           linear-gradient(
@@ -400,11 +456,17 @@ const Container = styled.div`
         );
         .image {
           width: 45%;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 100%;
+          }
           img {
             width: 100%;
             height: 100%;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              border-radius: 0px;
+            }
           }
         }
         ol {
@@ -412,6 +474,10 @@ const Container = styled.div`
           height: 100%;
           margin: 40px 0px;
           line-height: auto;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 100%;
+            padding-left: 10%;
+          }
 
           h2 {
             color: #fff;
@@ -419,6 +485,9 @@ const Container = styled.div`
             font-size: 57.825px;
             font-style: normal;
             font-weight: 400;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 50px;
+            }
           }
           li {
             overflow: hidden;
@@ -428,6 +497,9 @@ const Container = styled.div`
             font-style: normal;
             font-weight: 500;
             letter-spacing: -0.503px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 20px;
+            }
           }
           button {
             display: flex;
@@ -440,6 +512,9 @@ const Container = styled.div`
             color: #18004a;
             font-size: 40px;
             margin-top: 20px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 25px;
+            }
           }
         }
       }
@@ -452,12 +527,20 @@ const Container = styled.div`
     justify-content: center;
     background: #5414dc;
     margin-bottom: 20px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
     .numbers {
       width: 45%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 40px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 100%;
+      }
       div {
         display: flex;
         justify-content: space-around;
@@ -478,6 +561,9 @@ const Container = styled.div`
             font-size: 80px;
             font-style: normal;
             font-weight: 800;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 70px;
+            }
           }
           p {
             color: #18004a;
@@ -485,12 +571,18 @@ const Container = styled.div`
             font-size: 30px;
             font-style: normal;
             font-weight: 300;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 25px;
+            }
           }
         }
       }
     }
     .text {
       width: 45%;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 80%;
+      }
       h2 {
         color: #fff;
         font-family: Roboto;
@@ -499,6 +591,14 @@ const Container = styled.div`
         font-weight: 700;
         line-height: 60px;
         margin-bottom: 20px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          color: #fff;
+          font-family: Roboto;
+          font-size: 41.6px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 45px; /* 75% */
+        }
       }
       button {
         display: flex;
@@ -513,10 +613,17 @@ const Container = styled.div`
         font-weight: 400;
         border-radius: 100px;
         background-color: white;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 20px;
+        }
 
         svg {
           width: 43px;
           height: 43px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 26px;
+            height: 26px;
+          }
         }
         &:hover {
           box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);

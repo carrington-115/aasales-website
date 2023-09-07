@@ -8,10 +8,10 @@ const PopularItem = ({ title, context }) => {
         <h1>{title}</h1>
       </div>
       <div className="content">
-        {context.map(({ imageLocation, text, serviceContent }) => (
+        {context.map(({ imageLocation, title, serviceContent }) => (
           <div className="item">
             <img src={imageLocation} alt="" />
-            <h2>{text}</h2>
+            <h2>{title}</h2>
             <p>{serviceContent}</p>
             <button>Learn more</button>
           </div>

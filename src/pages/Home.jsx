@@ -255,6 +255,10 @@ const PopularContainer = styled.section`
     grid-gap: 21px;
     justify-content: center;
     align-items: start;
+    @media (min-width: 320px) and (max-width: 599px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .item {
       display: flex;
       flex-direction: column;
@@ -273,6 +277,9 @@ const PopularContainer = styled.section`
         width: 220px;
         height: auto;
         border-radius: 20px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          width: 180px;
+        }
       }
       h2 {
         color: #000;
@@ -281,6 +288,9 @@ const PopularContainer = styled.section`
         font-style: normal;
         font-weight: 700;
         line-height: 26px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 17px;
+        }
       }
       p {
         color: #000;
@@ -289,6 +299,10 @@ const PopularContainer = styled.section`
         font-style: normal;
         font-weight: 400;
         line-height: 26px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 11px;
+          line-height: 15px;
+        }
       }
       button {
         display: flex;
@@ -300,6 +314,9 @@ const PopularContainer = styled.section`
         background-color: #18004a;
         border: 1px solid transparent;
         border-radius: 0;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 11px;
+        }
         &:hover {
           border-color: #18004a;
           color: #18004a;
@@ -320,6 +337,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+
     .values-content {
       width: 80%;
       display: grid;
@@ -327,6 +345,9 @@ const Container = styled.div`
       justify-content: space-between;
       gap: 100px;
       row-gap: 50px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
       section {
         display: flex;
         flex-direction: column;
@@ -338,6 +359,9 @@ const Container = styled.div`
           font-size: 44px;
           font-weight: bold;
           line-height: 40px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            font-size: 20px;
+          }
         }
         p {
           color: #18004a;
@@ -347,10 +371,18 @@ const Container = styled.div`
           font-style: normal;
           font-weight: 500;
           line-height: 28px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            font-size: 12px;
+            line-height: 15px;
+          }
         }
         img {
           width: 100px;
           height: 100px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 70px;
+            height: 70px;
+          }
         }
       }
     }
@@ -367,6 +399,10 @@ const Container = styled.div`
       font-size: 64px;
       font-style: normal;
       font-weight: bold;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 40px;
+        margin-top: 0.5cm;
+      }
     }
   }
 
@@ -491,12 +527,20 @@ const Container = styled.div`
     justify-content: center;
     background: #5414dc;
     margin-bottom: 20px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
     .numbers {
       width: 45%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 40px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 100%;
+      }
       div {
         display: flex;
         justify-content: space-around;
@@ -517,6 +561,9 @@ const Container = styled.div`
             font-size: 80px;
             font-style: normal;
             font-weight: 800;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 70px;
+            }
           }
           p {
             color: #18004a;
@@ -524,12 +571,18 @@ const Container = styled.div`
             font-size: 30px;
             font-style: normal;
             font-weight: 300;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 25px;
+            }
           }
         }
       }
     }
     .text {
       width: 45%;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 80%;
+      }
       h2 {
         color: #fff;
         font-family: Roboto;
@@ -538,6 +591,14 @@ const Container = styled.div`
         font-weight: 700;
         line-height: 60px;
         margin-bottom: 20px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          color: #fff;
+          font-family: Roboto;
+          font-size: 41.6px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 45px; /* 75% */
+        }
       }
       button {
         display: flex;
@@ -552,10 +613,17 @@ const Container = styled.div`
         font-weight: 400;
         border-radius: 100px;
         background-color: white;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 20px;
+        }
 
         svg {
           width: 43px;
           height: 43px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 26px;
+            height: 26px;
+          }
         }
         &:hover {
           box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);

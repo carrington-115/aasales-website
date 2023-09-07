@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import DesktopSlider from "../components/DesktopSlider";
 import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
+import NumberCounter from "number-counter";
 
 const popularServices = [
   {
@@ -88,17 +89,23 @@ function Home() {
         <div className="numbers">
           <div className="row-1">
             <section>
-              <h1>5</h1>
+              <h1>
+                <NumberCounter end={5} delay={5} />
+              </h1>
               <p>Continents</p>
             </section>
             <section>
-              <h1>51</h1>
+              <h1>
+                <NumberCounter end={51} delay={5} />
+              </h1>
               <p>Countries</p>
             </section>
           </div>
           <div className="row-2">
             <section>
-              <h1>5000+</h1>
+              <h1>
+                <NumberCounter end={5000} delay={5} />
+              </h1>
               <p style={{ textAlign: "center" }}>
                 Distribution <br /> Centers
               </p>
@@ -369,11 +376,17 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 70px 0px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      padding: 0;
+    }
     .inner-content {
       width: 90%;
       display: flex;
       flex-direction: column;
       gap: 30px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 100%;
+      }
       h1 {
         align-self: flex-start;
         color: #000;
@@ -382,12 +395,19 @@ const Container = styled.div`
         font-style: normal;
         font-weight: bold;
         letter-spacing: -1.28px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          display: none;
+        }
       }
       section {
         width: 100%;
         display: flex;
         justify-content: space-between;
         border-radius: 21.346px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          flex-direction: column;
+          border-radius: 0;
+        }
         background: var(
           --gradient-1,
           linear-gradient(
@@ -400,11 +420,17 @@ const Container = styled.div`
         );
         .image {
           width: 45%;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 100%;
+          }
           img {
             width: 100%;
             height: 100%;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              border-radius: 0px;
+            }
           }
         }
         ol {
@@ -412,6 +438,10 @@ const Container = styled.div`
           height: 100%;
           margin: 40px 0px;
           line-height: auto;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 100%;
+            padding-left: 10%;
+          }
 
           h2 {
             color: #fff;
@@ -419,6 +449,9 @@ const Container = styled.div`
             font-size: 57.825px;
             font-style: normal;
             font-weight: 400;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 50px;
+            }
           }
           li {
             overflow: hidden;
@@ -428,6 +461,9 @@ const Container = styled.div`
             font-style: normal;
             font-weight: 500;
             letter-spacing: -0.503px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 20px;
+            }
           }
           button {
             display: flex;
@@ -440,6 +476,9 @@ const Container = styled.div`
             color: #18004a;
             font-size: 40px;
             margin-top: 20px;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 25px;
+            }
           }
         }
       }

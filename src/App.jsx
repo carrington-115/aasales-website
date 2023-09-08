@@ -7,12 +7,14 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import "./App.css";
 import Header from "./components/Header";
+import ScrollToTop from "./utilities/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

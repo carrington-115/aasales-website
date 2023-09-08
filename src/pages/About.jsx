@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
 import PopularItem from "../components/PopularItem";
 import NumberCounter from "number-counter";
-
 const popularServices = [
   {
     imageLocation: "/images/pages/home/services/service1.png",
@@ -58,6 +57,7 @@ const popularProducts = [
 ];
 
 function About() {
+  
   return (
     <Container>
       <section className="page-head">

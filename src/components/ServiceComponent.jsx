@@ -117,6 +117,7 @@ const Container = styled.div`
         border: 2px solid transparent;
         @media (min-width: 320px) and (max-width: 599px) {
           font-size: 16px;
+          padding: 7px 20px;
         }
 
         svg {

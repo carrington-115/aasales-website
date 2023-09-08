@@ -8,11 +8,13 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Header = () => {
   const [scrollState, setScrollState] = useState(false);
   const [menuState, setMenuState] = useState(false);
+  const [shadowState, setShadowState] = useState(false);
 
   function scrollCheck() {
     const scrollPosition = window.scrollY;
     if (scrollPosition >= 200) {
       setScrollState(true);
+      setShadowState(false);
     } else {
       setScrollState(false);
     }
@@ -31,16 +33,26 @@ const Header = () => {
   useEffect(() => {
     if (scrollState === true) {
       setScrollState(true);
+      setShadowState(true);
     } else {
       setScrollState(false);
+      setShadowState(false);
     }
     if (menuState === true && scrollState === false) {
       setScrollState(true);
+      setShadowState(false);
     }
-  }, [scrollState, menuState]);
+    if (menuState === true) {
+      setShadowState(false);
+    }
+  }, [scrollState, menuState, shadowState]);
 
   return (
-    <HeaderContainer show={scrollState} showMenu={menuState}>
+    <HeaderContainer
+      shadow={shadowState}
+      show={scrollState}
+      showMenu={menuState}
+    >
       <div className="inner-header" show={scrollState}>
         <Link onClick={handleOnSwitchPage} className="logo" to="/">
           {scrollState ? (
@@ -149,9 +161,9 @@ const HeaderContainer = styled.header`
     padding: ${(props) => (props.show ? "10px 50px" : "0")};
     border-radius: ${(props) => (props.show ? "50px" : "0")};
     box-shadow: ${(props) =>
-      props.showMenu
-        ? "0px -4px 4px 0px rgba(0, 0, 0, 0.25)"
-        : "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"};
+      props.show ? "0px -4px 4px 0px rgba(0, 0, 0, 0.25)" : "none"};
+    box-shadow: ${(props) =>
+      props.shadow ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" : "none"};
     .mobile-menu {
       @media (min-width: 600px) {
         display: none;

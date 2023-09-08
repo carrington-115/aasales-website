@@ -1,11 +1,59 @@
 import React from "react";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import styled from "styled-components";
+import ServiceComponent from "../components/ServiceComponent";
 
+const services = [
+  {
+    position: false,
+    imageLink: "/images/pages/services/product1.png",
+    title: "1. Transportation and Distribution Services",
+    paragraph:
+      "At AA SALES, we offer a comprehensive suite of transportation and distribution services designed to optimize your supply chain. Our expert team ensures efficient transportation management, from route optimization to carrier selection, while our strategically located warehouses and distribution centers provide secure storage and seamless order fulfillment. We excel in international freight forwarding, handling customs clearance and documentation for global shipments. With our advanced real-time visibility tools, you can monitor your supply chain at every step. We tailor our solutions to your unique needs, offering reliability, global reach, cutting-edge technology, and dedicated support. Partner with us to streamline your logistics, reduce costs, and enhance customer satisfaction, propelling your business to new heights",
+  },
+  {
+    position: true,
+    imageLink: "/images/pages/services/product2.png",
+    title: "2. Product Warehousing Services",
+    paragraph:
+      "Whether you need racked storage, bulk storage, or specialized handling, we customize our solutions to match your requirements. By outsourcing your warehousing needs to us, you can free up valuable space, reduce overhead costs, and optimize operational efficiency. Trust AA SALES as your reliable partner for product warehousing, allowing you to focus on your core business activities.",
+  },
+  {
+    position: false,
+    imageLink: "/images/pages/services/product3.png",
+    title: "3. Supply Chain Management",
+    paragraph:
+      "Our dedicated team of experts designs, implements, and optimizes supply chain strategies tailored to your specific industry and business needs. We excel in transportation management, ensuring timely and cost-effective delivery, whether it's local or global. Our strategically located warehouses and distribution centers provide secure inventory storage, allowing us to manage your stock levels, handle order fulfillment, and facilitate last-mile deliveries. We offer end-to-end visibility into your supply chain through cutting-edge technology, empowering you with real-time tracking and reporting.",
+  },
+  {
+    position: true,
+    imageLink: "/images/pages/services/product4.png",
+    title: "4. Reverse Logistics",
+    paragraph:
+      "Whether it's handling product recalls, processing customer returns, recycling, or responsible disposal, we've got you covered. We excel in creating sustainable and environmentally friendly practices, ensuring that returned goods are properly assessed, refurbished, or disposed of according to regulations and industry best practices. Our expertise in reverse logistics minimizes waste, maximizes asset recovery, and supports your commitment to sustainability and responsible business practices. Partner with us to turn reverse logistics into a value-added service, ultimately strengthening your brand's reputation and bottom line.",
+  },
+  {
+    position: false,
+    imageLink: "/images/pages/services/product5.png",
+    title: "5. E-Commerce Fulfillment",
+    paragraph:
+      "Our specialized e-commerce fulfillment services encompass everything you need to succeed in the online marketplace. From order processing and efficient inventory management to expert packing and timely shipping, we ensure that your customers receive their orders accurately and on time. We seamlessly integrate with various e-commerce platforms, enabling you to sell and expand your business on multiple channels. Our real-time tracking and reporting tools provide you and your customers with complete visibility into the status of every shipment. With our scalable solutions and customized strategies, you can grow your e-commerce business confidently.",
+  },
+];
 function Services() {
   return (
     <Container>
       <TopHeader />
+      <ServicesContainer>
+        {services.map((item) => (
+          <ServiceComponent
+            imagePosition={item.position}
+            imageLink={item.imageLink}
+            textTitle={item.title}
+            textParagraph={item.paragraph}
+          />
+        ))}
+      </ServicesContainer>
     </Container>
   );
 }
@@ -13,7 +61,7 @@ function Services() {
 const TopHeader = () => {
   return (
     <HeaderContainer>
-      <img src="/images/pages/products/header.png" alt="" />
+      <img src="/images/pages/services/header.png" alt="" />
       <div className="backdrop" />
       <div className="text-content">
         <h3>Check out our</h3>
@@ -139,4 +187,11 @@ const HeaderContainer = styled.div`
       background-color: #cdcdcd;
     }
   }
+`;
+const ServicesContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+  margin: 50px 0px;
 `;

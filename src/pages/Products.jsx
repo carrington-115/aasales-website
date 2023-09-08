@@ -1,10 +1,136 @@
 import React from "react";
 import styled from "styled-components";
+import { MdOutlineArrowDropDown } from "react-icons/md";
+import ProductComponent from "../components/ProductComponent";
 
+const productsList = [
+  {
+    position: false,
+    imageLink: "/images/pages/products/product1.png",
+    title: "1. Leather goods",
+    collection: [
+      "/images/pages/products/pcollection1/col1.png",
+      "/images/pages/products/pcollection1/col2.png",
+      "/images/pages/products/pcollection1/col3.png",
+      "/images/pages/products/pcollection1/col4.png",
+    ],
+    paragraph:
+      "Discover Quality Leather Products from AA SALES. At AA SALES, we take pride in offering a diverse range of high-quality products to meet our customers' needs. Among our wide selection, leather stands as a cornerstone of our offerings. Our carefully sourced and expertly crafted leather products include exquisite pieces that cater to various industries and preferences. ",
+  },
+  {
+    position: true,
+    imageLink: "/images/pages/products/product2.png",
+    title: "2. Textile goods",
+    collection: [
+      "/images/pages/products/pcollection2/col1.png",
+      "/images/pages/products/pcollection2/col2.png",
+      "/images/pages/products/pcollection2/col3.png",
+      "/images/pages/products/pcollection2/col4.png",
+    ],
+    paragraph:
+      "Our commitment to excellence begins with the meticulous selection of textile materials sourced from around the world, each chosen for its quality, durability, and unique character. This forms the foundation for a remarkable collection of textile products designed to transcend industries and ignite creativity. Our textile offerings are as versatile as they are inspirational, catering to a wide spectrum of applications. ",
+  },
+  {
+    position: false,
+    imageLink: "/images/pages/products/product3.png",
+    title: "3. Foot Wears",
+    collection: [
+      "/images/pages/products/pcollection3/col1.png",
+      "/images/pages/products/pcollection3/col2.png",
+      "/images/pages/products/pcollection3/col3.png",
+      "/images/pages/products/pcollection3/col4.png",
+    ],
+    paragraph:
+      "Our catalog showcases a diverse spectrum of premium footwear, from elegant dress shoes that embody sophistication and luxury to versatile sneakers designed for comfort and performance. Each pair of footwear we offer embodies a fusion of form and function, making them suitable for various occasions and lifestyles.",
+  },
+  {
+    position: true,
+    imageLink: "/images/pages/products/product4.png",
+    title: "4. Cosmetics and Perfumes",
+    collection: [
+      "/images/pages/products/pcollection4/col1.png",
+      "/images/pages/products/pcollection4/col2.png",
+      "/images/pages/products/pcollection4/col3.png",
+      "/images/pages/products/pcollection4/col4.png",
+    ],
+    paragraph:
+      "At AA SALES, we're dedicated to enhancing your beauty and elevating your senses with a captivating collection of cosmetics and perfumes. Within our curated selection, cosmetics and fragrances take center stage as the epitome of elegance and self-expression. Our journey towards excellence begins with sourcing the finest ingredients for our cosmetics, ensuring that each product not only enhances your natural beauty but also nourishes and cares for your skin. Our perfumes are crafted with a meticulous blend of scents and notes, capturing the essence of luxury and sophistication.",
+  },
+  {
+    position: false,
+    imageLink: "/images/pages/products/product5.png",
+    title: "5. Food Items",
+    collection: [
+      "/images/pages/products/pcollection5/col1.png",
+      "/images/pages/products/pcollection5/col2.png",
+      "/images/pages/products/pcollection5/col3.png",
+      "/images/pages/products/pcollection5/col4.png",
+    ],
+    paragraph:
+      "At AA SALES, we invite you on a culinary journey that celebrates the vibrant tapestry of flavors from around the world. In our carefully curated selection, grains, spices, and rice take center stage as essential ingredients that transform every meal into a culinary masterpiece. Our commitment to excellence begins with the sourcing of the highest-quality ingredients. From the rolling fields of golden wheat to the remote spice markets and lush rice paddies, we handpick each element to ensure authenticity, purity, and unmatched taste.",
+  },
+  {
+    position: true,
+    imageLink: "/images/pages/products/product6.png",
+    title: "6. Electronics",
+    collection: [
+      "/images/pages/products/pcollection2/col1.png",
+      "/images/pages/products/pcollection2/col2.png",
+      "/images/pages/products/pcollection2/col3.png",
+      "/images/pages/products/pcollection2/col4.png",
+    ],
+    paragraph:
+      "Our journey towards excellence begins with sourcing the latest and most advanced electronic devices and components from leading manufacturers worldwide. Each product is chosen not only for its performance but also for its ability to transform lives, making it easier, more efficient, and more enjoyable. Our catalog boasts an array of consumer electronics that cater to the needs of modern lifestyles. From the latest smartphones and tablets that keep you connected on the go to sleek laptops and smartwatches that seamlessly blend style and functionality, we provide the tools to navigate today's digital world with ease.",
+  },
+];
 function Products() {
   return (
     <Container>
-      <PageHeader></PageHeader>
+      <PageHeader />
+      <ProductsContainer>
+        <ProductComponent
+          imageLink={productsList[0].imageLink}
+          textTitle={productsList[0].title}
+          textParagraph={productsList[0].paragraph}
+          imagePosition={productsList[0].position}
+          collection={productsList[0].collection}
+        />
+        <ProductComponent
+          imageLink={productsList[1].imageLink}
+          textTitle={productsList[1].title}
+          textParagraph={productsList[1].paragraph}
+          imagePosition={productsList[1].position}
+          collection={productsList[1].collection}
+        />
+        <ProductComponent
+          imageLink={productsList[2].imageLink}
+          textTitle={productsList[2].title}
+          textParagraph={productsList[2].paragraph}
+          imagePosition={productsList[2].position}
+          collection={productsList[2].collection}
+        />
+        <ProductComponent
+          imageLink={productsList[3].imageLink}
+          textTitle={productsList[3].title}
+          textParagraph={productsList[3].paragraph}
+          imagePosition={productsList[3].position}
+          collection={productsList[3].collection}
+        />
+        <ProductComponent
+          imageLink={productsList[4].imageLink}
+          textTitle={productsList[4].title}
+          textParagraph={productsList[4].paragraph}
+          imagePosition={productsList[4].position}
+          collection={productsList[4].collection}
+        />
+        <ProductComponent
+          imageLink={productsList[5].imageLink}
+          textTitle={productsList[5].title}
+          textParagraph={productsList[5].paragraph}
+          imagePosition={productsList[5].position}
+          collection={productsList[5].collection}
+        />
+      </ProductsContainer>
     </Container>
   );
 }
@@ -17,6 +143,9 @@ const PageHeader = () => {
         <h3>Check out our</h3>
         <h1>Incredible</h1>
         <h2>Products</h2>
+      </div>
+      <div className="icon">
+        <MdOutlineArrowDropDown />
       </div>
     </HeaderContainer>
   );
@@ -98,4 +227,32 @@ const HeaderContainer = styled.section`
       }
     }
   }
+  .icon {
+    position: absolute;
+    z-index: 5;
+    background-color: white;
+    bottom: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    cursor: pointer;
+    svg {
+      width: 48px;
+      height: 48px;
+      color: #18004a;
+    }
+    &:hover {
+      background-color: #cdcdcd;
+    }
+  }
+`;
+
+const ProductsContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 100px;
+  margin: 50px 0px;
 `;

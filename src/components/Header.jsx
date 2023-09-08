@@ -23,6 +23,11 @@ const Header = () => {
     setMenuState(!menuState);
   }
 
+  const handleOnSwitchPage = () => {
+    window.scrollY(0);
+    setMenuState(false);
+  };
+
   useEffect(() => {
     if (scrollState === true) {
       setScrollState(true);
@@ -37,7 +42,7 @@ const Header = () => {
   return (
     <HeaderContainer show={scrollState} showMenu={menuState}>
       <div className="inner-header" show={scrollState}>
-        <Link className="logo" to="/">
+        <Link onClick={handleOnSwitchPage} className="logo" to="/">
           {scrollState ? (
             <img src="/images/utilities/logos/tab-logo.svg" alt="" />
           ) : (
@@ -45,19 +50,24 @@ const Header = () => {
           )}
         </Link>
         <nav className="desktop-navigation" show={scrollState}>
-          <Link show={scrollState} to="/">
+          <Link onClick={handleOnSwitchPage} show={scrollState} to="/">
             Home
           </Link>
-          <Link show={scrollState} to="/about">
+          <Link onClick={handleOnSwitchPage} show={scrollState} to="/about">
             About
           </Link>
-          <Link show={scrollState} to="/services">
+          <Link onClick={handleOnSwitchPage} show={scrollState} to="/services">
             Services
           </Link>
-          <Link show={scrollState} to="/products">
+          <Link onClick={handleOnSwitchPage} show={scrollState} to="/products">
             Products
           </Link>
-          <Link show={scrollState} className="contact" to="/contact">
+          <Link
+            onClick={handleOnSwitchPage}
+            show={scrollState}
+            className="contact"
+            to="/contact"
+          >
             Contact
           </Link>
           <button className="translate-btn">
@@ -92,11 +102,21 @@ const Header = () => {
         </div>
       </div>
       <div showMenu={menuState} className="mobile-hamburger">
-        <Link t="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/contact">Contact</Link>
+        <Link onClick={handleOnSwitchPage} to="/">
+          Home
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/about">
+          About
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/services">
+          Services
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/products">
+          Products
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/contact">
+          Contact
+        </Link>
       </div>
     </HeaderContainer>
   );
@@ -129,7 +149,9 @@ const HeaderContainer = styled.header`
     padding: ${(props) => (props.show ? "10px 50px" : "0")};
     border-radius: ${(props) => (props.show ? "50px" : "0")};
     box-shadow: ${(props) =>
-      props.show ? "0px -4px 4px 0px rgba(0, 0, 0, 0.25)" : "none"};
+      props.showMenu
+        ? "0px -4px 4px 0px rgba(0, 0, 0, 0.25)"
+        : "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"};
     .mobile-menu {
       @media (min-width: 600px) {
         display: none;

@@ -25,10 +25,10 @@ const Header = () => {
     setMenuState(!menuState);
   }
 
-  const handleOnSwitchPage = () => {
-    window.scrollY(0);
-    setMenuState(false);
-  };
+  // const handleOnSwitchPage = () => {
+  //   window.scrollY(0);
+  //   setMenuState(false);
+  // };
 
   useEffect(() => {
     if (scrollState === true) {
@@ -54,7 +54,7 @@ const Header = () => {
       showMenu={menuState}
     >
       <div className="inner-header" show={scrollState}>
-        <Link onClick={handleOnSwitchPage} className="logo" to="/">
+        <Link className="logo" to="/">
           {scrollState ? (
             <img src="/images/utilities/logos/tab-logo.svg" alt="" />
           ) : (
@@ -62,24 +62,19 @@ const Header = () => {
           )}
         </Link>
         <nav className="desktop-navigation" show={scrollState}>
-          <Link onClick={handleOnSwitchPage} show={scrollState} to="/">
+          <Link show={scrollState} to="/">
             Home
           </Link>
-          <Link onClick={handleOnSwitchPage} show={scrollState} to="/about">
+          <Link show={scrollState} to="/about">
             About
           </Link>
-          <Link onClick={handleOnSwitchPage} show={scrollState} to="/services">
+          <Link show={scrollState} to="/services">
             Services
           </Link>
-          <Link onClick={handleOnSwitchPage} show={scrollState} to="/products">
+          <Link show={scrollState} to="/products">
             Products
           </Link>
-          <Link
-            onClick={handleOnSwitchPage}
-            show={scrollState}
-            className="contact"
-            to="/contact"
-          >
+          <Link show={scrollState} className="contact" to="/contact">
             Contact
           </Link>
           <button className="translate-btn">
@@ -114,21 +109,11 @@ const Header = () => {
         </div>
       </div>
       <div showMenu={menuState} className="mobile-hamburger">
-        <Link onClick={handleOnSwitchPage} to="/">
-          Home
-        </Link>
-        <Link onClick={handleOnSwitchPage} to="/about">
-          About
-        </Link>
-        <Link onClick={handleOnSwitchPage} to="/services">
-          Services
-        </Link>
-        <Link onClick={handleOnSwitchPage} to="/products">
-          Products
-        </Link>
-        <Link onClick={handleOnSwitchPage} to="/contact">
-          Contact
-        </Link>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/contact">Contact</Link>
       </div>
     </HeaderContainer>
   );

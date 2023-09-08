@@ -25,10 +25,9 @@ const Header = () => {
     setMenuState(!menuState);
   }
 
-  // const handleOnSwitchPage = () => {
-  //   window.scrollY(0);
-  //   setMenuState(false);
-  // };
+  const handleOnSwitchPage = () => {
+    setMenuState(false);
+  };
 
   useEffect(() => {
     if (scrollState === true) {
@@ -54,7 +53,7 @@ const Header = () => {
       showMenu={menuState}
     >
       <div className="inner-header" show={scrollState}>
-        <Link className="logo" to="/">
+        <Link onClick={handleOnSwitchPage} className="logo" to="/">
           {scrollState ? (
             <img src="/images/utilities/logos/tab-logo.svg" alt="" />
           ) : (
@@ -109,11 +108,21 @@ const Header = () => {
         </div>
       </div>
       <div showMenu={menuState} className="mobile-hamburger">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/contact">Contact</Link>
+        <Link onClick={handleOnSwitchPage} to="/">
+          Home
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/about">
+          About
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/services">
+          Services
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/products">
+          Products
+        </Link>
+        <Link onClick={handleOnSwitchPage} to="/contact">
+          Contact
+        </Link>
       </div>
     </HeaderContainer>
   );

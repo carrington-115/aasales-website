@@ -33,8 +33,10 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: ${(props) => (props.position ? "right" : "left")};
-  gap: 50px;
+  @media (min-width: 320px) and (max-width: 599px) {
+    flex-direction: column;
+  }
+
   .image {
     width: 40%;
     order: ${(props) => (props.position ? "1" : "2")};
@@ -43,16 +45,29 @@ const Container = styled.div`
       height: 100%;
       object-fit: cover;
     }
+    @media (min-width: 320px) and (max-width: 599px) {
+      width: 80%;
+      order: 2;
+      align-self: ${(props) => (props.position ? "flex-end" : "flex-start")};
+      margin-top: 0.5cm;
+    }
   }
   .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap:15px;
+    gap: 15px;
     width: 45%;
     order: ${(props) => (props.position ? "0" : "2")};
     margin: ${(props) =>
       props.position ? "0px 0px 0px 50px" : "0px 50px 0px 0px"};
+    @media (min-width: 320px) and (max-width: 599px) {
+      width: 80%;
+      align-items: center;
+      order: 1;
+      margin: 0;
+      padding: 0px 15px;
+    }
 
     h1 {
       color: #18004a;
@@ -60,6 +75,9 @@ const Container = styled.div`
       font-size: 36px;
       font-style: normal;
       font-weight: bold;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 24px;
+      }
     }
     p {
       overflow: hidden;
@@ -69,6 +87,9 @@ const Container = styled.div`
       font-size: 18px;
       font-style: normal;
       font-weight: 300;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 14px;
+      }
     }
     .btns {
       display: flex;
@@ -76,6 +97,10 @@ const Container = styled.div`
       justify-content: space-between;
       align-items: center;
       margin-top: 0.5cm;
+      @media (min-width: 320px) and (max-width: 599px) {
+        margin: 0;
+        width: 100%;
+      }
       button {
         display: flex;
         justify-content: space-between;
@@ -91,12 +116,12 @@ const Container = styled.div`
         background-color: #18004a;
         border: 2px solid transparent;
         @media (min-width: 320px) and (max-width: 599px) {
-          font-size: 20px;
+          font-size: 16px;
         }
 
         svg {
-          width: 43px;
-          height: 43px;
+          width: 36px;
+          height: 36px;
           @media (min-width: 320px) and (max-width: 599px) {
             width: 26px;
             height: 26px;
@@ -110,6 +135,11 @@ const Container = styled.div`
         border-color: #18004a;
         background-color: transparent;
         color: #18004a;
+        &:hover {
+          box-shadow: none;
+          color: white;
+          background-color: #18004a;
+        }
       }
     }
   }

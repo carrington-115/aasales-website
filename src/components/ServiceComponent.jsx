@@ -33,6 +33,7 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: space-between;
   @media (min-width: 320px) and (max-width: 599px) {
     flex-direction: column;
   }
@@ -40,6 +41,7 @@ const Container = styled.div`
   .image {
     width: 40%;
     order: ${(props) => (props.position ? "1" : "2")};
+    align-self: ${(props) => (props.position ? "flex-end" : "flex-start")};
     img {
       width: 100%;
       height: 100%;

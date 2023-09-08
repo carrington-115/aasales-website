@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
 import PopularItem from "../components/PopularItem";
+import NumberCounter from "number-counter";
 
 const popularServices = [
   {
@@ -115,6 +116,44 @@ function About() {
           </button>
         </div>
       </section>
+      <div className="traction">
+        <div className="numbers">
+          <div className="row-1">
+            <section>
+              <h1>
+                <NumberCounter end={5} delay={5} />
+              </h1>
+              <p>Continents</p>
+            </section>
+            <section>
+              <h1>
+                <NumberCounter end={51} delay={5} />
+              </h1>
+              <p>Countries</p>
+            </section>
+          </div>
+          <div className="row-2">
+            <section>
+              <h1>
+                <NumberCounter end={5000} delay={5} />
+              </h1>
+              <p style={{ textAlign: "center" }}>
+                Distribution <br /> Centers
+              </p>
+            </section>
+          </div>
+        </div>
+        <div className="text">
+          <h2>
+            We Operate in 4 Continents and We have 5000+ Warehouses and
+            Distribution Centers
+          </h2>
+          <button>
+            <MdOutlineCall />
+            Contact us
+          </button>
+        </div>
+      </div>
       <section className="customer-part">
         <div className="content">
           <section className="image">
@@ -211,7 +250,10 @@ const Container = styled.div`
     z-index: 4;
     right: 0;
     bottom: 0;
-    /* aspect-ratio: 1 2; */
+    @media (min-width: 320px) and (max-width: 599px) {
+      width: 100vw;
+    }
+
     width: 60vw;
     img {
       width: 100%;
@@ -220,6 +262,9 @@ const Container = styled.div`
     }
   }
   .head-person {
+    @media (min-width: 320px) and (max-width: 599px) {
+      display: none;
+    }
     position: absolute;
     z-index: 5;
     bottom: 0;
@@ -240,12 +285,21 @@ const Container = styled.div`
     bottom: 70px;
     left: 80px;
     line-height: 90px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      bottom: 20%;
+      right: 0;
+      line-height: 60px;
+      width: 70vw;
+    }
     h3 {
       font-family: Qwigley;
       color: #14dc78;
       font-size: 80px;
       font-style: normal;
       font-weight: 400;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 50px;
+      }
     }
     h1 {
       color: #18004a;
@@ -256,6 +310,9 @@ const Container = styled.div`
       padding: 5px 10px;
       border-radius: 10px;
       background-color: white;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 70px;
+      }
     }
     h2 {
       color: #fff;
@@ -263,6 +320,9 @@ const Container = styled.div`
       font-size: 70px;
       font-style: normal;
       font-weight: 700;
+      @media (min-width: 320px) and (max-width: 599px) {
+        font-size: 40px;
+      }
     }
     button {
       display: flex;
@@ -364,8 +424,7 @@ const Container = styled.div`
           margin: 40px 0px;
           margin-left: 1.5cm;
           @media (min-width: 320px) and (max-width: 599px) {
-            width: 100%;
-            padding-left: 10%;
+            width: 80%;
           }
 
           h2 {
@@ -400,12 +459,13 @@ const Container = styled.div`
             align-items: center;
             border-radius: 10px;
             background: white;
-            font-family: Qwigley;
+            font-family: Roboto;
             color: #18004a;
             font-size: 40px;
             margin-top: 20px;
             @media (min-width: 320px) and (max-width: 599px) {
-              font-size: 25px;
+              font-size: 20px;
+              align-self: flex-end;
             }
           }
         }
@@ -439,6 +499,10 @@ const Container = styled.div`
         font-style: normal;
         font-weight: 700;
         line-height: 58px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 30px;
+          line-height: 40px;
+        }
       }
 
       button {
@@ -484,8 +548,14 @@ const Container = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
+      @media (min-width: 320px) and (max-width: 599px) {
+        flex-wrap: wrap;
+      }
       .image {
         width: 35%;
+        @media (min-width: 320px) and (max-width: 599px) {
+          width: 100%;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -497,12 +567,19 @@ const Container = styled.div`
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          width: 100%;
+          margin-top: 20px;
+        }
         h1 {
           color: #18004a;
           font-family: Roboto;
           font-size: 48px;
           font-style: normal;
           font-weight: 700;
+          @media (min-width: 320px) and (max-width: 599px) {
+            font-size: 36px;
+          }
         }
         h2 {
           color: #18004a;
@@ -523,6 +600,117 @@ const Container = styled.div`
             font-weight: 500;
             line-height: 36px;
           }
+        }
+      }
+    }
+  }
+  .traction {
+    width: 100%;
+    padding: 60px 0px;
+    display: flex;
+    justify-content: center;
+    background: #5414dc;
+    margin-bottom: 20px;
+    @media (min-width: 320px) and (max-width: 599px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .numbers {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 100%;
+      }
+      div {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background: #fff;
+          box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);
+
+          h1 {
+            color: #18004a;
+            font-family: Roboto;
+            font-size: 80px;
+            font-style: normal;
+            font-weight: 800;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 70px;
+            }
+          }
+          p {
+            color: #18004a;
+            font-family: Roboto;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 300;
+            @media (min-width: 320px) and (max-width: 599px) {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+    .text {
+      width: 45%;
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 80%;
+      }
+      h2 {
+        color: #fff;
+        font-family: Roboto;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+        margin-bottom: 20px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          color: #fff;
+          font-family: Roboto;
+          font-size: 41.6px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 45px; /* 75% */
+        }
+      }
+      button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 35px;
+        gap: 17px;
+        color: #18004a;
+        font-family: Roboto Serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        border-radius: 100px;
+        background-color: white;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 20px;
+        }
+
+        svg {
+          width: 43px;
+          height: 43px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 26px;
+            height: 26px;
+          }
+        }
+        &:hover {
+          box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);
         }
       }
     }

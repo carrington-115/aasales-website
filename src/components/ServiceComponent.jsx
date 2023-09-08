@@ -62,7 +62,7 @@ const Container = styled.div`
     margin: ${(props) =>
       props.position ? "0px 0px 0px 50px" : "0px 50px 0px 0px"};
     @media (min-width: 320px) and (max-width: 599px) {
-      width:90%;
+      width: 90%;
       align-items: center;
       order: 1;
       margin: 0;

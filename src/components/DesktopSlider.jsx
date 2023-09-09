@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
 
 const settings = {
   dots: false,
@@ -17,6 +18,7 @@ const settings = {
 };
 
 function DesktopSlider() {
+  const navigate = useNavigate();
   return (
     <CarouselContainer>
       <CarouselSlider {...settings}>
@@ -32,8 +34,10 @@ function DesktopSlider() {
             <h1>AA SALES</h1>
             <p>Imports and Exports</p>
             <div className="btns">
-              <button>Contact us</button>
-              <button className="outlined">Learn more</button>
+              <button onClick={() => navigate("/contact")}>Contact us</button>
+              <button onClick={() => navigate("/about")} className="outlined">
+                Learn more
+              </button>
             </div>
           </div>
         </div>
@@ -88,7 +92,7 @@ function DesktopSlider() {
               Exports
             </h2>
             <div className="btns">
-              <button>Contact us</button>
+              <button onClick={() => navigate("/contact")}>Contact us</button>
             </div>
           </div>
         </div>

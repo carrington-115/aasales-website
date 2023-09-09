@@ -102,10 +102,10 @@ const PopularContainer = styled.section`
       p {
         color: #000;
         font-family: Roboto;
-        font-size: 18px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 26px;
+        line-height: 23px;
         @media (min-width: 320px) and (max-width: 599px) {
           font-size: 11px;
           line-height: 15px;

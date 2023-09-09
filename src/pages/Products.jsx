@@ -2,7 +2,34 @@ import React from "react";
 import styled from "styled-components";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import ProductComponent from "../components/ProductComponent";
+import PopularItem from "../components/PopularItem";
 
+const popularServices = [
+  {
+    imageLocation: "/images/pages/home/services/service1.png",
+    title: "Product Shipments",
+    serviceContent:
+      "At AASALES we offer a comprehensive range of shipment services designed to meet your unique logisticsneeds.",
+  },
+  {
+    imageLocation: "/images/pages/home/services/service2.png",
+    title: "Imports and Exports",
+    serviceContent:
+      "We ensure the smooth flow of goods across borders, whether you're importing raw materials or exporting finished products. We handle all the intricacies of customs documentation, compliance, and shipping logistics, so you can focus on what you do best – growing your business.",
+  },
+  {
+    imageLocation: "/images/pages/home/services/service3.png",
+    title: "Warehousing Services",
+    serviceContent:
+      "We offer cutting-edge Product Warehousing solutions designed to streamline your storage and distribution needs. Our state-of-the-art warehouses are equipped to handle all your storage requirements,",
+  },
+  {
+    imageLocation: "/images/pages/home/services/service4.png",
+    title: "E-Commerce Fulfillment",
+    serviceContent:
+      "We are your partner for success in the dynamic world of online retail. Enhance your e-commerce operations and elevate customer satisfaction with our comprehensive logistics expertise..",
+  },
+];
 const productsList = [
   {
     position: false,
@@ -131,6 +158,7 @@ function Products() {
           collection={productsList[5].collection}
         />
       </ProductsContainer>
+      <PopularItem title="Our Popular Services" context={popularServices} />
     </Container>
   );
 }

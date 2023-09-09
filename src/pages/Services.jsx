@@ -2,6 +2,7 @@ import React from "react";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import styled from "styled-components";
 import ServiceComponent from "../components/ServiceComponent";
+import PopularItem from "../components/PopularItem";
 
 const services = [
   {
@@ -40,6 +41,33 @@ const services = [
       "Our specialized e-commerce fulfillment services encompass everything you need to succeed in the online marketplace. From order processing and efficient inventory management to expert packing and timely shipping, we ensure that your customers receive their orders accurately and on time. We seamlessly integrate with various e-commerce platforms, enabling you to sell and expand your business on multiple channels. Our real-time tracking and reporting tools provide you and your customers with complete visibility into the status of every shipment. With our scalable solutions and customized strategies, you can grow your e-commerce business confidently.",
   },
 ];
+
+const popularProducts = [
+  {
+    imageLocation: "/images/pages/home/products/product1.png",
+    title: "Leather",
+    serviceContent:
+      "Our carefully sourced and expertly crafted leather products include exquisite pieces that cater to various industries and preferences. From fashion and accessories to upholstery and beyond, our leather products are synonymous with durability, style, and exceptional craftsmanship.",
+  },
+  {
+    imageLocation: "/images/pages/home/products/product2.png",
+    title: "Textiles",
+    serviceContent:
+      "Our extensive range of textiles encompasses an array of materials, patterns, and textures suitable for various applications. Whether you're in the fashion industry, interior design, or manufacturing, our textiles are crafted with precision and attention to detail, allowing you to bring your creative visions to life.",
+  },
+  {
+    imageLocation: "/images/pages/home/products/product3.png",
+    title: "Food Items",
+    serviceContent:
+      "we are passionate about sharing the rich tapestry of flavors from around the world. As a leading food distribution and exporting service, we specialize in the global sourcing, distribution, and export of premium food products, including grains, spices, and rice.",
+  },
+  {
+    imageLocation: "/images/pages/home/products/product4.png",
+    title: "Electronics",
+    serviceContent:
+      "Discover the limitless possibilities of the digital world with AA SALES. We're your trusted partner in sourcing and delivering high-quality electronics products that empower innovation and enhance connectivity.",
+  },
+];
 function Services() {
   return (
     <Container>
@@ -54,6 +82,7 @@ function Services() {
           />
         ))}
       </ServicesContainer>
+      <PopularItem title="Our Popular Products" context={popularProducts} />
     </Container>
   );
 }

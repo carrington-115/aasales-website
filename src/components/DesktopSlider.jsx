@@ -138,7 +138,7 @@ const CarouselSlider = styled(Slider)`
       align-items: flex-start;
       @media (min-width: 320px) and (max-width: 599px) {
         left: 30px;
-        bottom: 50px;
+        bottom: 30%;
         gap: 10px;
       }
       h1,

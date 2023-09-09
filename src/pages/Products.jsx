@@ -166,13 +166,13 @@ function Products() {
 const PageHeader = () => {
   return (
     <HeaderContainer>
-      <img src="/images/pages/products/header.png" alt="" />
+      <img loading="lazy" src="/images/pages/products/header.png" alt="" />
       <div className="text">
         <h3>Check out our</h3>
         <h1>Incredible</h1>
         <h2>Products</h2>
       </div>
-      <div className="icon">
+      <div className="icon" onClick={() => window.scrollBy(0, 700)}>
         <MdOutlineArrowDropDown />
       </div>
     </HeaderContainer>

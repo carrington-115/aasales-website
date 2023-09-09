@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
 import PopularItem from "../components/PopularItem";
 import NumberCounter from "number-counter";
+import { useNavigate } from "react-router-dom";
+
 const popularServices = [
   {
     imageLocation: "/images/pages/home/services/service1.png",
@@ -57,10 +59,11 @@ const popularProducts = [
 ];
 
 function About() {
+  const navigate = useNavigate();
   return (
     <Container>
       <section className="page-head">
-        <img src="/images/pages/about/head-image.png" alt="" />
+        <img loading="lazy" src="/images/pages/about/head-image.png" alt="" />
         <div className="backdrop" />
         <div className="vector">
           <img src="/images/pages/about/header-vector.svg" alt="" />
@@ -70,9 +73,9 @@ function About() {
         </div>
         <div className="text-part">
           <h3>Learn more about</h3>
-          <h1>AA SALES</h1>
+          <h1>A A SALES</h1>
           <h2>Forging Horizons</h2>
-          <button>
+          <button onClick={() => navigate("/contact")}>
             <MdOutlineCall />
             Contact us
           </button>
@@ -92,7 +95,9 @@ function About() {
                 Improve operational efficiency, reduce costs, and enhance
                 customer satisfaction
               </li>
-              <button>Checkout our Services</button>
+              <button onClick={() => navigate("/contact")}>
+                Checkout our Services
+              </button>
             </ol>
           </section>
         </div>
@@ -109,7 +114,7 @@ function About() {
             efficient logistics services while fostering sustainability and
             growth for our clients and partners worldwide."
           </h2>
-          <button>
+          <button onClick={() => navigate("/contact")}>
             <MdOutlineCall />
             Contact us
           </button>
@@ -147,7 +152,7 @@ function About() {
             We Operate in 4 Continents and We have 5000+ Warehouses and
             Distribution Centers
           </h2>
-          <button>
+          <button onClick={() => navigate("/contact")}>
             <MdOutlineCall />
             Contact us
           </button>
@@ -170,7 +175,7 @@ function About() {
               <li>Construction and Building materials</li>
               <li>Technology and Electronics</li>
             </ol>
-            <button></button>
+            <button onClick={() => navigate("/services")}>Our Services</button>
           </section>
         </div>
       </section>
@@ -289,6 +294,7 @@ const Container = styled.div`
       right: 0;
       line-height: 60px;
       width: 70vw;
+      left: 10%;
     }
     h3 {
       font-family: Qwigley;

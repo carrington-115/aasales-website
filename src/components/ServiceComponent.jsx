@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const ServiceComponent = ({
   imageLink,
@@ -8,6 +9,7 @@ const ServiceComponent = ({
   textParagraph,
   imagePosition,
 }) => {
+  const navigate = useNavigate();
   return (
     <Container position={imagePosition}>
       <section className="image">
@@ -17,10 +19,15 @@ const ServiceComponent = ({
         <h1>{textTitle}</h1>
         <p>{textParagraph}</p>{" "}
         <section className="btns">
-          <button>
+          <button onClick={() => navigate("/contact")}>
             <MdOutlineCall /> Contact us
           </button>
-          <button className="learn-more-btn">Learn more</button>
+          <button
+            onClick={() => navigate("/contact")}
+            className="learn-more-btn"
+          >
+            Learn more
+          </button>
         </section>
       </section>
     </Container>

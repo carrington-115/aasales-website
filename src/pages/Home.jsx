@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { MdOutlineCall } from "react-icons/md";
 import NumberCounter from "number-counter";
 import PopularItem from "../components/PopularItem";
+import { useNavigate } from "react-router-dom";
 
 const popularServices = [
   {
@@ -59,6 +60,7 @@ const popularProducts = [
 ];
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <Container>
       <DesktopSlider />
@@ -67,17 +69,16 @@ function Home() {
           <h1>Our Products & Services</h1>
           <section>
             <div className="image">
-              <img src="/images/pages/home/intro.png" alt="" />
+              <img loading="lazy" src="/images/pages/home/intro.png" alt="" />
             </div>
             <ol>
               <h2>Our Products and Services</h2>
-              <li>Product shipments</li>
               <li>Imports and exports</li>
-              <li>Quality control</li>
+              <li>Product shipment</li>
               <li>Warehousing and distribution</li>
               <li>E-commerce logistics</li>
               <li>Transportation Services</li>
-              <button>Learn more</button>
+              <button onClick={() => navigate("/about")}>Learn more</button>
             </ol>
           </section>
         </div>
@@ -114,10 +115,10 @@ function Home() {
         </div>
         <div className="text">
           <h2>
-            We Operate in 4 Continents and We have 5000+ Warehouses and
+            We Operate in 5 Continents and We have 5000+ Warehouses and
             Distribution Centers
           </h2>
-          <button>
+          <button onClick={() => navigate("/contact")}>
             <MdOutlineCall />
             Contact us
           </button>

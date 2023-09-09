@@ -53,7 +53,7 @@ function DesktopSlider() {
             <h2>
               Best
               <br />
-              SHIPMENTS
+              SHIPMENT
               <br />
               Services
             </h2>

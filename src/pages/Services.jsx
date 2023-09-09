@@ -90,14 +90,14 @@ function Services() {
 const TopHeader = () => {
   return (
     <HeaderContainer>
-      <img src="/images/pages/services/header.png" alt="" />
+      <img loading="lazy" src="/images/pages/services/header.png" alt="" />
       <div className="backdrop" />
       <div className="text-content">
         <h3>Check out our</h3>
         <h1>Incredible</h1>
         <h2>Services</h2>
       </div>
-      <div className="icon">
+      <div className="icon" onClick={() => window.scrollBy(0, 700)}>
         <MdOutlineArrowDropDown />
       </div>
     </HeaderContainer>

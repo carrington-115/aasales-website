@@ -21,7 +21,11 @@ function DesktopSlider() {
     <CarouselContainer>
       <CarouselSlider {...settings}>
         <div className="slide">
-          <img src="/images/utilities/slider/slide1.png" alt="" />
+          <img
+            loading="lazy"
+            src="/images/utilities/slider/slide1.png"
+            alt=""
+          />
           <div className="backdrop" />
           <div className="slider-text">
             <h2>Welcome to</h2>
@@ -34,7 +38,11 @@ function DesktopSlider() {
           </div>
         </div>
         <div className="slide">
-          <img src="/images/utilities/slider/slide2.png" alt="" />
+          <img
+            loading="lazy"
+            src="/images/utilities/slider/slide2.png"
+            alt=""
+          />
           <div className="backdrop" />
           <div className="slider-text">
             <p>We Offer</p>
@@ -48,7 +56,11 @@ function DesktopSlider() {
           </div>
         </div>
         <div className="slide">
-          <img src="/images/utilities/slider/slide3.png" alt="" />
+          <img
+            loading="lazy"
+            src="/images/utilities/slider/slide3.png"
+            alt=""
+          />
           <div className="backdrop" />
           <div className="slider-text">
             <p>We Offer</p>
@@ -62,7 +74,11 @@ function DesktopSlider() {
           </div>
         </div>
         <div className="slide">
-          <img src="/images/utilities/slider/slide4.png" alt="" />
+          <img
+            loading="lazy"
+            src="/images/utilities/slider/slide4.png"
+            alt=""
+          />
           <div className="backdrop" />
           <div className="slider-text">
             <p>We Do</p>

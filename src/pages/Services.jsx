@@ -82,7 +82,11 @@ function Services() {
           />
         ))}
       </ServicesContainer>
-      <PopularItem title="Our Popular Products" context={popularProducts} />
+      <PopularItem
+        link="products"
+        title="Our Popular Products"
+        context={popularProducts}
+      />
     </Container>
   );
 }

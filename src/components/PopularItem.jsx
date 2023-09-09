@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-const PopularItem = ({ title, context }) => {
+const PopularItem = ({ title, context, link }) => {
+  const navigate = useNavigate();
   return (
     <PopularContainer>
       <div className="title-separator">
@@ -13,7 +15,7 @@ const PopularItem = ({ title, context }) => {
             <img src={imageLocation} alt="" />
             <h2>{title}</h2>
             <p>{serviceContent}</p>
-            <button>Learn more</button>
+            <button onClick={() => navigate(`/${link}`)}>Learn more</button>
           </div>
         ))}
       </div>
@@ -74,12 +76,12 @@ const PopularContainer = styled.section`
         padding: 10px 5px;
         border-radius: 5px;
         gap: 5px;
+        &:hover {
+          box-shadow: none;
+        }
       }
       cursor: pointer;
-      &:hover {
-        background-color: white;
-        box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);
-      }
+
       img {
         width: 220px;
         height: auto;

@@ -179,8 +179,16 @@ function About() {
           </section>
         </div>
       </section>
-      <PopularItem title="Our Popular Services" context={popularServices} />
-      <PopularItem title="Our Popular Products" context={popularProducts} />
+      <PopularItem
+        link="services"
+        title="Our Popular Services"
+        context={popularServices}
+      />
+      <PopularItem
+        link="products"
+        title="Our Popular Products"
+        context={popularProducts}
+      />
     </Container>
   );
 }

@@ -158,7 +158,11 @@ function Products() {
           collection={productsList[5].collection}
         />
       </ProductsContainer>
-      <PopularItem title="Our Popular Services" context={popularServices} />
+      <PopularItem
+        link="services"
+        title="Our Popular Services"
+        context={popularServices}
+      />
     </Container>
   );
 }

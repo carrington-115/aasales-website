@@ -26,16 +26,16 @@ const Footer = () => {
             <FooterLink to="/">
               Home <GoLinkExternal />
             </FooterLink>
-            <FooterLink to="/">
+            <FooterLink to="/about">
               About us <GoLinkExternal />
             </FooterLink>
-            <FooterLink to="/">
+            <FooterLink to="/services">
               Our Services <GoLinkExternal />
             </FooterLink>
-            <FooterLink to="/">
+            <FooterLink to="/products">
               Our Products <GoLinkExternal />
             </FooterLink>
-            <FooterLink to="/">
+            <FooterLink to="/contact">
               Contact us <GoLinkExternal />
             </FooterLink>
           </nav>
@@ -185,6 +185,7 @@ const Container = styled.footer`
         height: 36px;
         color: white;
       }
+      a,
       p {
         color: #fff;
         font-family: Roboto;

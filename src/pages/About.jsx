@@ -57,7 +57,6 @@ const popularProducts = [
 ];
 
 function About() {
-  
   return (
     <Container>
       <section className="page-head">
@@ -490,7 +489,9 @@ const Container = styled.div`
       flex-direction: column;
       align-items: flex-end;
       width: 80%;
-
+      @media (min-width: 320px) and (max-width: 599px) {
+        width: 95%;
+      }
       h2 {
         color: #fff;
         text-align: center;

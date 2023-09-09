@@ -27,6 +27,8 @@ const Header = () => {
 
   const handleOnSwitchPage = () => {
     setMenuState(false);
+    setShadowState(false);
+    setScrollState(false);
   };
 
   useEffect(() => {
@@ -55,7 +57,7 @@ const Header = () => {
       <div className="inner-header" show={scrollState}>
         <Link onClick={handleOnSwitchPage} className="logo" to="/">
           {scrollState ? (
-            <img src="/images/utilities/logos/tab-logo.svg" alt="" />
+            <img src="/images/utilities/logos/logo.svg" alt="" />
           ) : (
             <img src="/images/utilities/logos/logo.svg" alt="" />
           )}
@@ -78,11 +80,11 @@ const Header = () => {
           </Link>
           <button className="translate-btn">
             <HiOutlineTranslate
-              color={scrollState ? "white" : "#18004a"}
+              color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
             <RiArrowDropDownLine
-              color={scrollState ? "white" : "#18004a"}
+              color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
           </button>
@@ -90,19 +92,19 @@ const Header = () => {
         <div className="mobile-menu">
           <div className="translate-icon">
             <HiOutlineTranslate
-              color={scrollState ? "white" : "#18004a"}
+              color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
             <RiArrowDropDownLine
-              color={scrollState ? "white" : "#18004a"}
+              color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
           </div>
           <div className="ham-menu-icon" onClick={handleMenuClicked}>
             {menuState ? (
-              <AiOutlineClose color={scrollState ? "#18004a" : "white"} />
+              <AiOutlineClose color={scrollState ? "white" : "white"} />
             ) : (
-              <AiOutlineMenu color={scrollState ? "#18004a" : "white"} />
+              <AiOutlineMenu color={scrollState ? "white" : "white"} />
             )}
           </div>
         </div>
@@ -150,8 +152,8 @@ const HeaderContainer = styled.header`
     align-items: center;
     z-index: 10;
     gap: 100px;
-    margin: ${(props) => (props.show ? "50px 0px" : "65px 0px")};
-    background-color: ${(props) => (props.show ? "white" : "none")};
+    margin: ${(props) => (props.show ? "20px 0px" : "30px 0px")};
+    background-color: ${(props) => (props.show ? "#18004a" : "none")};
     padding: ${(props) => (props.show ? "10px 50px" : "0")};
     border-radius: ${(props) => (props.show ? "50px" : "0")};
     box-shadow: ${(props) =>
@@ -179,8 +181,8 @@ const HeaderContainer = styled.header`
         flex-direction: column;
         align-items: flex-start;
         border-radius: 50px;
-        background-color: ${(props) => (props.show ? "#18004a" : "white")};
-        color: ${(props) => (props.show ? "white" : "#18004a")};
+        background-color: ${(props) => (props.show ? "white" : "white")};
+        color: ${(props) => (props.show ? "#18004a" : "#18004a")};
         &:hover {
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         }
@@ -208,17 +210,20 @@ const HeaderContainer = styled.header`
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
+      width: 80%;
+
       .mobile-menu {
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 50%;
+
         .translate-icon {
           position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: ${(props) => (props.show ? "#18004a" : "white")};
+          background-color: ${(props) => (props.show ? "white" : "white")};
           padding: 6px 12px;
           border-radius: 30px;
           &:hover {
@@ -231,6 +236,15 @@ const HeaderContainer = styled.header`
         }
         .ham-menu-icon {
           width: 48px;
+          @media (min-width: 320px) and (max-width: 599px) {
+            width: 36px;
+            height: 36px;
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           svg {
             width: 100%;
             height: 100%;
@@ -244,6 +258,14 @@ const HeaderContainer = styled.header`
       .logo {
         width: 75px;
         height: 44.229px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          width: 80px;
+          height: 35px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
         img {
           width: 100%;
           height: 100%;
@@ -253,27 +275,31 @@ const HeaderContainer = styled.header`
     .mobile-hamburger {
       position: fixed;
       overflow-x: hidden;
-      top: 90px;
-      width: 90vw;
+      top: 55px;
+      width: 89vw;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: white;
+      background-color: #18004a;
       padding-top: 1.35cm;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      height: 60vh;
+      height: 50vh;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
-      gap: 50px;
+      gap: 30px;
       transform: ${(props) => (props.showMenu ? "scaleY(100%)" : "scaleY(0%)")};
       transition: all 0.1s 250ms cubic-bezier(1, 0.3, 0.96, 0.7);
       a {
-        color: #18004a;
+        color: ${(props) => (props.show ? "white" : "white")};
         font-family: Roboto;
         font-size: 36px;
         font-style: normal;
         font-weight: 500;
         line-height: 26.998px;
+        @media (min-width: 320px) and (max-width: 599px) {
+          font-size: 24px;
+          line-height: auto;
+        }
         &:hover {
           color: #14dc78;
         }
@@ -289,8 +315,7 @@ const Link = styled(NavLink)`
   font-weight: 500;
   line-height: 26.998px;
   text-decoration: none;
-  color: ${(props) => (props.show ? "#18004a" : "white")};
-
+  color: white;
   &:hover {
     color: #14dc78;
   }

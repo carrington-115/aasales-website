@@ -90,7 +90,7 @@ function About() {
             </div>
             <ol>
               <h2>We solve the following problems for our clients</h2>
-              <li>We optimize shipments scheduling and delivery</li>
+              <li>We optimize shipments, scheduling, and delivery</li>
               <li>
                 Improve operational efficiency, reduce costs, and enhance
                 customer satisfaction

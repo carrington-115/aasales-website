@@ -6,6 +6,13 @@ import PopularItem from "../components/PopularItem";
 
 const services = [
   {
+    position: true,
+    imageLink: "/images/pages/services/product6.png",
+    title: "6. Imports and Exports Services",
+    paragraph:
+      "AASales is your go-to logistics company for top-tier import and export services. With years of industry expertise, we offer customized solutions tailored to your unique needs, regardless of your business's size or scope. Our expansive global network, coupled with cutting-edge technology, ensures the efficient and timely movement of your goods, providing real-time visibility and cost savings. We handle customs clearance with precision, navigate complex regulations effortlessly, and offer risk management solutions to safeguard your interests. Choose AASales as your trusted partner to streamline your supply chain, reduce operational stress, and unlock the full potential of international trade. Your success is our ultimate destination.",
+  },
+  {
     position: false,
     imageLink: "/images/pages/services/product1.png",
     title: "1. Transportation and Distribution Services",

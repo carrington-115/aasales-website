@@ -11,7 +11,7 @@ const popularServices = [
     imageLocation: "/images/pages/home/services/service1.png",
     title: "Product Shipments",
     serviceContent:
-      "At AASALES we offer a comprehensive range of shipment services designed to meet your unique logisticsneeds.",
+      "At AASALES we offer a comprehensive range of shipment services designed to meet your unique logistic needs.",
   },
   {
     imageLocation: "/images/pages/home/services/service2.png",
@@ -72,8 +72,8 @@ function Home() {
               <img loading="lazy" src="/images/pages/home/intro.png" alt="" />
             </div>
             <ol>
-              <h2>Our Products and Services</h2>
               <li>Imports and exports</li>
+              <h2>Our Products and Services</h2>
               <li>Product shipment</li>
               <li>Warehousing and distribution</li>
               <li>E-commerce logistics</li>
@@ -147,7 +147,7 @@ function Home() {
               <img src="/images/pages/home/icons/value2.png" alt="" />
             </div>
             <div className="text">
-              <h3>Reliable</h3>
+              <h3>Reliability</h3>
               <p>
                 Consistently delivering goods on time and in the expected
                 condition is our first hallmark
@@ -186,10 +186,10 @@ function Home() {
               <img src="/images/pages/home/icons/value5.png" alt="" />
             </div>
             <div className="text">
-              <h3>Reliable</h3>
+              <h3>Global Reach</h3>
               <p>
-                Consistently delivering goods on time and in the expected
-                condition is our first hallmark
+                We have the capacity to operate and manage logistics on a global
+                scale and necessary
               </p>
             </div>
           </section>
@@ -198,10 +198,10 @@ function Home() {
               <img src="/images/pages/home/icons/value6.png" alt="" />
             </div>
             <div className="text">
-              <h3>Accuracy</h3>
+              <h3>Transparency</h3>
               <p>
-                We maintain precise inventory and shipment tracking to prevent
-                errors for every of our operations
+                We Provide clear, real-time information to clients about the
+                status and location of their shipments
               </p>
             </div>
           </section>

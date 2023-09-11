@@ -78,7 +78,7 @@ const Header = () => {
           <Link show={scrollState} className="contact" to="/contact">
             Contact
           </Link>
-          <button className="translate-btn">
+          {/* <button className="translate-btn">
             <HiOutlineTranslate
               color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
@@ -87,10 +87,10 @@ const Header = () => {
               color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
-          </button>
+          </button> */}
         </nav>
         <div className="mobile-menu">
-          <div className="translate-icon">
+          {/* <div className="translate-icon">
             <HiOutlineTranslate
               color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
@@ -99,7 +99,7 @@ const Header = () => {
               color={scrollState ? "#18004a" : "#18004a"}
               style={{ width: "30px", height: "30px" }}
             />
-          </div>
+          </div> */}
           <div className="ham-menu-icon" onClick={handleMenuClicked}>
             {menuState ? (
               <AiOutlineClose color={scrollState ? "white" : "white"} />

@@ -9,7 +9,7 @@ const popularServices = [
     imageLocation: "/images/pages/home/services/service1.png",
     title: "Product Shipments",
     serviceContent:
-      "At AASALES we offer a comprehensive range of shipment services designed to meet your unique logisticsneeds.",
+      "At AASALES we offer a comprehensive range of shipment services designed to meet your unique logistic needs.",
   },
   {
     imageLocation: "/images/pages/home/services/service2.png",
@@ -101,10 +101,10 @@ const productsList = [
     imageLink: "/images/pages/products/product6.png",
     title: "6. Electronics",
     collection: [
-      "/images/pages/products/pcollection2/col1.png",
-      "/images/pages/products/pcollection2/col2.png",
-      "/images/pages/products/pcollection2/col3.png",
-      "/images/pages/products/pcollection2/col4.png",
+      "/images/pages/products/pcollection6/col1.png",
+      "/images/pages/products/pcollection6/col2.png",
+      "/images/pages/products/pcollection6/col2.png",
+      "/images/pages/products/pcollection6/col4.png",
     ],
     paragraph:
       "Our journey towards excellence begins with sourcing the latest and most advanced electronic devices and components from leading manufacturers worldwide. Each product is chosen not only for its performance but also for its ability to transform lives, making it easier, more efficient, and more enjoyable. Our catalog boasts an array of consumer electronics that cater to the needs of modern lifestyles. From the latest smartphones and tablets that keep you connected on the go to sleek laptops and smartwatches that seamlessly blend style and functionality, we provide the tools to navigate today's digital world with ease.",

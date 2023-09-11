@@ -6,11 +6,29 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        includedLanguages: "hi",
+        autoDisplay: false,
+        layout: window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+      },
+      "google_translate_element"
+    );
+  };
   const [scrollState, setScrollState] = useState(false);
   const [menuState, setMenuState] = useState(false);
   const [shadowState, setShadowState] = useState(false);
 
   function scrollCheck() {
+    let addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
     const scrollPosition = window.scrollY;
     if (scrollPosition >= 200) {
       setScrollState(true);
